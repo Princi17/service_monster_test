@@ -8,15 +8,15 @@ require File.expand_path('../service_monster/client', __FILE__)
 
 
 module ServiceMonster
-  
-  extend Configuration  
+
+  extend Configuration
   # Alias for ServiceMonster::Client.new
   #
   # @return [ServiceMonster::Client]
   def self.client(options = {})
     ServiceMonster::Client.new(options)
   end
-  
+
   # Delegate to Instagram::Client
   def self.method_missing(method, *args, &block)
     return super unless client.respond_to?(method)

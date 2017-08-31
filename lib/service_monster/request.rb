@@ -26,10 +26,10 @@ module ServiceMonster
           request.url(path)
         end
       end
-      
+
       Response.create(response.body)
     end
-    
+
     # Format the Options before you send them off to ServiceMonster
     def format_options(options)
       return if options.blank?
@@ -43,7 +43,7 @@ module ServiceMonster
 
       return options
     end
-    
+
     # format the fields to a format that the ServiceMonster likes
     # @param [Array or String] fields can be specified as an Array or String
     # @return String
@@ -54,6 +54,6 @@ module ServiceMonster
         return fields
       end
     end
-      
+
   end
 end

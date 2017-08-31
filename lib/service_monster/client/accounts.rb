@@ -9,7 +9,7 @@ module ServiceMonster
       def account(id, options = {})
         response = get("accounts/#{id}", options)
       end
-
     end
+    include Accounts
   end
 end
