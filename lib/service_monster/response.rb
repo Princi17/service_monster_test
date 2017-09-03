@@ -5,5 +5,8 @@ module ServiceMonster
       data.extend(self)
       return data
     end
+
+    attr_reader :pagination
+    attr_reader :meta
   end
 end
