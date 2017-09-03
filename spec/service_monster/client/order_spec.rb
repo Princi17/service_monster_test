@@ -12,14 +12,11 @@ RSpec.describe ServiceMonster::Client::Orders do
   describe "GET #orders" do
     it "returns a success response" do
       byebug
-      uri = URI('https://api.servicemonster.net/v1/accounts')
-      response = Net::HTTP.get(uri)
+      response = JSON.parse(@client.orders)
 
-      # response = JSON.parse(@client.orders)
-      #
-      # expect(response).to be_an_instance_of(Hash)
-      # expect(response['items']).to be_an_instance_of(Array)
-      # expect(response['items'].size).to > 0
+      expect(response).to be_an_instance_of(Hash)
+      expect(response['items']).to be_an_instance_of(Array)
+      expect(response['items'].size).to > 0
     end
   end
 

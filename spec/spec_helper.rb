@@ -1,15 +1,7 @@
 require 'service_monster'
-require 'webmock/rspec'
+# require 'webmock/rspec'
 
 RSpec.configure do |config|
-
-  WebMock.disable_net_connect!(allow_localhost: true)
-
-  config.before(:each) do
-    stub_get("accounts").
-      with(headers: {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'Authorization'=>'Basic', 'User-Agent'=>'Faraday v0.13.1'}).
-      to_return(:status => 200, :body => "", :headers => {})
-  end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
