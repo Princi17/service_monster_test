@@ -61,11 +61,50 @@ Getting a list of orders:
 client.orders(params)
 ```
 
+Getting a list of orders according to date
+
+```ruby
+client.orders({wField: "createdOn", wOperator: 'gt', wValue: "2015-03-20"})
+```
+
+Getting a list of orders according to pagination
+
+```ruby
+client.orders({limit: 1, page: 1 })
+```
+
+
 Getting a single order (the id parameter is the Service Monster GUID for the order):
 
 ```ruby
 client.order(id, params)
 ```
+
+Getting a list of jobs:client.orders({wField: "createdOn", wOperator: 'gt', wValue: "2015-03-20"})
+
+```ruby
+client.jobs(params)
+```
+
+Getting a single job (the id parameter is the Service Monster GUID for the job):
+
+```ruby
+client.job(id, params)
+```
+
+Getting a jobs according to date
+
+```ruby
+client.jobs({wField: "timeStamp", wOperator: 'gt', wValue: "2015-03-20"})
+```
+
+
+Getting a list of jobs according to pagination
+
+```ruby
+client.jobs({limit: 1, page: 1 })
+```
+
 
 ### Parameters
 
